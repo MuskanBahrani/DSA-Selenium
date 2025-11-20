@@ -55,5 +55,31 @@
       </dependency>
 
 
+
+
+
   </dependencies>
+
+    <profiles>
+        <profile>
+            <id>TestCases</id>
+            <build>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <configuration>
+                        <includes>
+                            <include>**/TestCasesForExample1.java</include>
+                            <include>**/TestCasesForExample2.java</include>
+                        </includes>
+                        <parallel>classes</parallel>
+                        <threadCount>5</threadCount>
+                        <useUnlimitedThreads>false</useUnlimitedThreads>
+                    </configuration>
+                </plugin>
+            </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>
